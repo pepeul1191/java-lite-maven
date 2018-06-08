@@ -10,7 +10,7 @@ Crear war usando Maven:
 
 Ejecutar Main Class usando Maven:
 
-    $ mvn exec:java -Dexec.mainClass="configs.Test"
+    $ mvn clean && mvn install && mvn exec:java -Dexec.mainClass="configs.Test"
 
 --- 
 
@@ -18,3 +18,4 @@ Fuentes
 
 + https://www.mkyong.com/maven/how-to-create-a-web-application-project-with-maven/
 + https://stackoverflow.com/questions/9846046/run-main-class-of-maven-project
++ http://javalite.io/english_inflections

@@ -1,7 +1,6 @@
 package configs;
 import java.util.ArrayList;
 import java.util.List;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.javalite.activejdbc.Base;
 import org.json.JSONObject;
 import models.Departamento;
@@ -28,6 +27,7 @@ public class Test {
       rpta = rptaTry.toString();
     } finally {
       System.out.println(rpta);
+      Base.close();
     }
   }
 }

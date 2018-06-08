@@ -8,9 +8,9 @@ import models.Departamento;
 public class Test {
   public static void main(String args[]){
     String rpta = "";
-    List<JSONObject> rptaTemp = new ArrayList<JSONObject>();
     try {
-      new DB("ubicaciones").open("org.sqlite.JDBC", "jdbc:sqlite:" + "/home/pepe/Documentos/java/lite/db/ubicaciones.db", "root", "p@ssw0rd");
+      List<JSONObject> rptaTemp = new ArrayList<JSONObject>();
+      new DB("ubicaciones").open("org.sqlite.JDBC", "jdbc:sqlite:" + "./db/ubicaciones.db", "root", "p@ssw0rd");
       List<Departamento> departamentosList = Departamento.findAll();
       for (Departamento departamento : departamentosList) {
         JSONObject obj = new JSONObject();

@@ -1,7 +1,7 @@
 package configs;
 import java.util.ArrayList;
 import java.util.List;
-import org.javalite.activejdbc.Base;
+import org.javalite.activejdbc.DB;
 import org.json.JSONObject;
 import models.Departamento;
 
@@ -10,7 +10,7 @@ public class Test {
     String rpta = "";
     List<JSONObject> rptaTemp = new ArrayList<JSONObject>();
     try {
-      Base.open("org.sqlite.JDBC", "jdbc:sqlite:" + "/home/pepe/Documentos/java/lite/db/ubicaciones.db", "root", "p@ssw0rd");
+      new DB("ubicaciones").open("org.sqlite.JDBC", "jdbc:sqlite:" + "/home/pepe/Documentos/java/lite/db/ubicaciones.db", "root", "p@ssw0rd");
       List<Departamento> departamentosList = Departamento.findAll();
       for (Departamento departamento : departamentosList) {
         JSONObject obj = new JSONObject();
@@ -27,7 +27,7 @@ public class Test {
       rpta = rptaTry.toString();
     } finally {
       System.out.println(rpta);
-      Base.close();
+      new DB("ubicaciones").close();
     }
   }
 }

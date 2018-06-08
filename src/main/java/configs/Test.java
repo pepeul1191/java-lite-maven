@@ -7,10 +7,11 @@ import models.Departamento;
 
 public class Test {
   public static void main(String args[]){
+    Database db = new Database();
     String rpta = "";
     try {
       List<JSONObject> rptaTemp = new ArrayList<JSONObject>();
-      new DB("ubicaciones").open("org.sqlite.JDBC", "jdbc:sqlite:" + "./db/ubicaciones.db", "root", "p@ssw0rd");
+      db.open();
       List<Departamento> departamentosList = Departamento.findAll();
       for (Departamento departamento : departamentosList) {
         JSONObject obj = new JSONObject();
@@ -27,7 +28,7 @@ public class Test {
       rpta = rptaTry.toString();
     } finally {
       System.out.println(rpta);
-      new DB("ubicaciones").close();
+      db.close();
     }
   }
 }

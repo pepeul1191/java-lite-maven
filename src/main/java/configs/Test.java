@@ -1,7 +1,6 @@
 package configs;
 import java.util.ArrayList;
 import java.util.List;
-import org.javalite.activejdbc.DB;
 import org.json.JSONObject;
 import models.Departamento;
 

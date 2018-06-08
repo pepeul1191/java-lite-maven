@@ -2,8 +2,8 @@ package configs;
 
 import org.javalite.activejdbc.DB;
 import org.javalite.activejdbc.DBException;
-//import com.typesafe.config.Config;
-//import com.typesafe.config.ConfigFactory;
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 
 class Database{
   private DB db;
@@ -17,11 +17,11 @@ class Database{
   }
 
   public void open() throws DBException{
-    //Config constants = ConfigFactory.parseResources("configs/application.conf");
-    String driver = "org.sqlite.JDBC";//constants.getString("database.driver");
-    String url = "jdbc:sqlite:./db/ubicaciones.db";//constants.getString("database.url");
-    String user = "";//constants.getString("database.user");
-    String password = "";//constants.getString("database.password");
+    Config constants = ConfigFactory.parseResources("configs/application.conf");
+    String driver = constants.getString("database.driver");
+    String url = constants.getString("database.url");
+    String user = constants.getString("database.user");
+    String password = constants.getString("database.password");
     //DB db = new DB();
 	  this.db.open(driver, url, user, password);
   }

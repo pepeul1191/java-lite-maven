@@ -35,7 +35,7 @@ public class Test {
     try {
       List<JSONObject> rptaTemp = new ArrayList<JSONObject>();
       db.open();
-      List<VWDistritoProvinciaDepartamento> rptaList = VWDistritoProvinciaDepartamento.findAll();
+      List<VWDistritoProvinciaDepartamento> rptaList = VWDistritoProvinciaDepartamento.where("nombre LIKE 'L%'").limit(10);
       for (VWDistritoProvinciaDepartamento distrito : rptaList) {
         JSONObject obj = new JSONObject();
         obj.put("id", distrito.get("id"));
